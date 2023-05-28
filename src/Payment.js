@@ -17,7 +17,7 @@ function Payment() {
                 </div>
 
                 <div className='payment__address'>
-                    <p>{user?.email} </p>
+                    <p>Email : {user?.email} </p>
                     <p>1111, S Michigan Ave</p>
                     <p>Chicago, IL</p>
 

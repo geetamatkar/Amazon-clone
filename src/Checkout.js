@@ -9,11 +9,11 @@ function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
   var username = ' '
 
-  //var atIndex = !user ? 'Guest' : user.email.indexOf('@');
+  var atIndex = !user ? 'Guest' : user.email.indexOf('@');
 
-  //var username = !user ? 'Guest' : user.email.substring(0, atIndex);
+  var username = !user ? 'Guest' : user.email.substring(0, atIndex);
 
-  //username = username.charAt(0).toUpperCase()+ username.slice(1)
+  username = username.charAt(0).toUpperCase()+ username.slice(1)
 
   return (
     <div className='checkout'>
@@ -23,7 +23,7 @@ function Checkout() {
             alt=''/>
 
             <div>
-                <h3>Hey, {!user ? 'Guest' : user.email} </h3>
+                <h3>Hey, {!username ? 'Guest' : username} </h3>
                 <h2 className='checkout__title'>Items in your cart</h2>
 
                 {basket.map(item => (
