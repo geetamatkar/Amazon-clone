@@ -1,3 +1,5 @@
+import FlipMove from 'react-flip-move';
+
 export const initialState = {
     basket: [],
     user: null
@@ -19,10 +21,12 @@ const reducer = (state, action) => {
             };
 
         case 'REMOVE_FROM_CART' :
+          
             const index = state.basket.findIndex(
-                (basketItem) => basketItem.id === action.id
+                (basketItem) => basketItem.id === action.id                
               );
-
+             
+            
               let newBasket = [...state.basket];  //copy new basket state
               
               if (index >= 0) {
@@ -38,6 +42,7 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket
               }
+             
 
         case 'SET_USER' : 
             return {
